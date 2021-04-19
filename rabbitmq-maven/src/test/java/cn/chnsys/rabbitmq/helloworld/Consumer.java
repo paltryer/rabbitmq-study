@@ -1,5 +1,6 @@
-package cn.chnsys.rabbitmq;
+package cn.chnsys.rabbitmq.helloworld;
 
+import cn.chnsys.rabbitmq.utils.RabbitMqUtils;
 import com.rabbitmq.client.*;
 import org.junit.Test;
 
@@ -17,14 +18,7 @@ public class Consumer {
     //需要以main函数的形式，@Test测试不支持多线程接收消息
     @Test
     public static void main(String[] args) throws IOException, TimeoutException {
-        ConnectionFactory connectionFactory = new ConnectionFactory();
-        connectionFactory.setHost("182.92.73.48");
-        connectionFactory.setPort(5672);
-        connectionFactory.setVirtualHost("/ems");
-        connectionFactory.setUsername("ems");
-        connectionFactory.setPassword("123");
-
-        Connection connection = connectionFactory.newConnection();
+        Connection connection = RabbitMqUtils.getConnection();
         Channel channel = connection.createChannel();
         //绑定通道
         channel.queueDeclare("hello", false, false, false, null);
