@@ -12,7 +12,7 @@ import java.io.IOException;
  * 只不过topic类型Exchange可以让队列在绑定routing key的时候使用   通配符
  * 这种模式 routing key 一般都是由一个或者多个单词组成，多个单词之间以 。 分割 例如   item。insert
  * * 匹配一个单词
- * # 匹配0到多个单词
+ * # 匹配0 到多个单词
  *
  * @author Wangchao
  * @version 1.0

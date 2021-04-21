@@ -10,7 +10,7 @@ package cn.chnsys.rabbitmq;
 public class Provider {
 
 
-    public void testSendMessage(){
+    public void testSendMessage() {
 
     }
 
